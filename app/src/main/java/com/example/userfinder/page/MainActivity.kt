@@ -104,7 +104,6 @@ class MainActivity : BaseActivity(), MainPageContract.View {
     }
 
     fun onSearch(nama : String) {
-        showDialog(true)
         if (nama.isNotEmpty() && listData.count() != 0) {
             Log.e("typing : ", nama)
             val result = listData.filter {
@@ -118,7 +117,6 @@ class MainActivity : BaseActivity(), MainPageContract.View {
         } else {
             mAdapterUser?.updateList(listData.take(10))
         }
-        showDialog(false)
     }
 
     fun loadMore() {
